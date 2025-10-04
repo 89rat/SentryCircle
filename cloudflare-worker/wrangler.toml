@@ -1,0 +1,30 @@
+name = "sentrycircle-api"
+main = "index.js"
+compatibility_date = "2023-10-30"
+
+# KV Namespace Bindings
+kv_namespaces = [
+  { binding = "SENTRYCIRCLE_KV", id = "YOUR_KV_NAMESPACE_ID_HERE" }
+]
+
+# Environment Variables
+[vars]
+# These will be replaced with actual values in the Cloudflare dashboard
+# or using wrangler secret commands
+JWT_SECRET = "replace_with_actual_secret"
+
+# Development environment
+[env.dev]
+kv_namespaces = [
+  { binding = "SENTRYCIRCLE_KV", id = "YOUR_DEV_KV_NAMESPACE_ID_HERE" }
+]
+
+# Production environment
+[env.production]
+kv_namespaces = [
+  { binding = "SENTRYCIRCLE_KV", id = "YOUR_PRODUCTION_KV_NAMESPACE_ID_HERE" }
+]
+
+# Set up routes (optional, can also be done in the Cloudflare dashboard)
+# [routes]
+# route = "api.sentrycircle.com/*"
